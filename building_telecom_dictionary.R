@@ -10,8 +10,6 @@ url <- 'http://www.atis.org/glossary/definitionsList.aspx?find=A&kw=0'
 #extracting the content of the given url
 url_content <- read_html('http://www.atis.org/glossary/definitionsList.aspx?find=A&kw=0')
 
-class(url_content)
-
 
 #extracting all the links from the page 
 links <-  url_content %>% html_nodes('a') %>% html_attr('href')
