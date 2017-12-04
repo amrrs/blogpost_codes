@@ -1,4 +1,4 @@
-#load rvest library
+#load rvest and stringr library
 
 library(rvest)
 library(stringr)
@@ -9,6 +9,8 @@ url <- 'http://www.atis.org/glossary/definitionsList.aspx?find=A&kw=0'
 
 #extracting the content of the given url
 url_content <- read_html('http://www.atis.org/glossary/definitionsList.aspx?find=A&kw=0')
+
+class(url_content)
 
 
 #extracting all the links from the page 
@@ -24,6 +26,5 @@ rough_dict <- data.frame(links,text, stringsAsFactors = F)
 fair_dict <- rough_dict %>% filter(str_detect(links, 'id')) %>% select(text)
 
 
-
-
+fair_dict
 
