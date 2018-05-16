@@ -24,3 +24,9 @@ top_20() %>%
   geom_text(nudge_x = 0.1) +
   xlab('Programming Language') +
   ggtitle('Programming Languages Change from May')
+
+
+## Long History
+
+long_term_history()
+
